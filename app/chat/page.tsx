@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Send, Mic, X, Check } from 'lucide-react'
+import { basePath } from '../config'
 
 function ChatContent() {
   const router = useRouter()
@@ -239,7 +240,7 @@ function ChatContent() {
                         if (line.startsWith('[MEDIA:')) {
                           return (
                             <div key={lineIdx} className="my-3">
-                              <img src="/dental-scan.png" alt="Dental scan" className="w-24 h-24 rounded-lg border border-gray-200 bg-white object-cover" />
+                              <img src={`${basePath}/dental-scan.png`} alt="Dental scan" className="w-24 h-24 rounded-lg border border-gray-200 bg-white object-cover" />
                             </div>
                           )
                         }
@@ -356,7 +357,7 @@ function ChatContent() {
                 <div className="ml-7 space-y-2">
                   {orderData.files.map((file: string, idx: number) => (
                     <div key={idx} className="flex items-center gap-3">
-                      <img src="/dental-scan.png" alt={file} className="w-14 h-14 rounded border border-gray-200 bg-white object-cover flex-shrink-0" />
+                      <img src={`${basePath}/dental-scan.png`} alt={file} className="w-14 h-14 rounded border border-gray-200 bg-white object-cover flex-shrink-0" />
                       <span className="text-sm text-gray-900">{file}</span>
                     </div>
                   ))}

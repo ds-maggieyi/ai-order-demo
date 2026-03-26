@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Menu, Bell, HelpCircle, Search, Mic, Send, X, ChevronDown, Plus } from 'lucide-react'
+import { basePath } from './config'
 
 export default function Dashboard() {
   const router = useRouter()
@@ -22,7 +23,7 @@ export default function Dashboard() {
           <button className="p-1.5 hover:bg-gray-100 rounded">
             <Menu className="w-5 h-5 text-gray-700" />
           </button>
-          <img src="/ds-core-logo.png" alt="DS CORE" className="h-6" />
+          <img src={`${basePath}/ds-core-logo.png`} alt="DS CORE" className="h-6" />
         </div>
         <div className="flex items-center gap-2">
           <button className="p-1.5 hover:bg-gray-100 rounded">

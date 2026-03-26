@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { X, Check, ChevronDown, Calendar, Edit2, Check as CheckIcon, X as XIcon } from 'lucide-react'
+import { basePath } from '../config'
 
 export default function FinalizePage() {
   const router = useRouter()
@@ -238,7 +239,7 @@ export default function FinalizePage() {
                 <div className="bg-white border border-gray-300 rounded-lg p-4">
                   <p className="font-medium text-sm text-gray-900 mb-3">Files</p>
                   <div className="flex items-center gap-3">
-                    <img src="/dental-scan.png" alt="Dental scan" className="w-14 h-14 rounded border border-gray-200 bg-white object-cover flex-shrink-0" />
+                    <img src={`${basePath}/dental-scan.png`} alt="Dental scan" className="w-14 h-14 rounded border border-gray-200 bg-white object-cover flex-shrink-0" />
                     <p className="text-sm text-gray-600">2026_02_28_scan.DI</p>
                   </div>
                 </div>
